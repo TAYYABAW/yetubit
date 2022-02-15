@@ -116,7 +116,6 @@ const SideBar = () => {
       }`}
       style={{
         borderRight: "1px solid lightgray",
-     
       }}
     >
       <PerfectScrollbar className="deznav-scroll">
@@ -170,17 +169,14 @@ const SideBar = () => {
             </Link>
           </li>
 
-          <li >
-            <Link>
-              <IconSetting />
-              <span onClick={() => setGridInsideModal(true)}>Setting</span>
+          <li>
+            <a>
+              <span onClick={() => setGridInsideModal(true)}>
+                <IconSetting />
+                <span className="nav-text">Setting</span>
+              </span>
               {/* <!-- Modal --> */}
-              <Modal
-                className="fade d-flex"
-                show={gridInsideModal}
-                style={{}}
-                size="lg"
-              >
+              <Modal className="fade d-flex" show={gridInsideModal} size="lg">
                 <Modal.Header>
                   <Modal.Title>Account Setting</Modal.Title>
                   <Button
@@ -237,7 +233,7 @@ const SideBar = () => {
                   </Container>
                 </Modal.Body>
               </Modal>
-            </Link>
+            </a>
           </li>
         </MM>
       </PerfectScrollbar>
