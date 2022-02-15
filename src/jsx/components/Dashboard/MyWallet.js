@@ -23,114 +23,114 @@ import Coinpayments from "coinpayments";
 import { ReactComponent as Arr } from "./Wallet/arrow.svg";
 import { ReactComponent as Door } from "./Wallet/door.svg";
 
-import HomeBTC  from "./1BTC/HomeBTC";
-import  DepositBTC from "./1BTC/DepositBTC";
-import WithdrawBTC from "./1BTC/WithdrawBTC";
+import HomeBTC  from "./Wallet/1BTC/HomeBTC";
+import  DepositBTC from "./Wallet/1BTC/DepositBTC";
+import WithdrawBTC from "./Wallet/1BTC/WithdrawBTC";
 
 
-import HomeBCH from "./2BCH/HomeBCH";
-import DepositBCH  from "./2BCH/DepositBCH";
-import WithdrawBCH from "./2BCH/WithdrawBCH";
+import HomeBCH from "./Wallet/2BCH/HomeBCH";
+import DepositBCH  from "./Wallet/2BCH/DepositBCH";
+import WithdrawBCH from "./Wallet/2BCH/WithdrawBCH";
 
 
-import HomeLTC from "./3LTC/HomeLTC";
-import DepositLTC from "./3LTC/DepositLTC";
-import WithdrawLTC from "./3LTC/WithdrawLTC";
+import HomeLTC from "./Wallet/3LTC/HomeLTC";
+import DepositLTC from "./Wallet/3LTC/DepositLTC";
+import WithdrawLTC from "./Wallet/3LTC/WithdrawLTC";
 
 
-import HomeVLX from "./4VLX/HomeVLX";
-import DepositVLX from "./4VLX/DepositVLX";
-import WithdrawVLX from "./4VLX/WithdrawVLX";
+import HomeVLX from "./Wallet/4VLX/HomeVLX";
+import DepositVLX from "./Wallet/4VLX/DepositVLX";
+import WithdrawVLX from "./Wallet/4VLX/WithdrawVLX";
 
 
-import HomeADA from "./5ADA/HomeADA";
-import DepositADA  from "./5ADA/DepositADA";
-import WithdrawADA from "./5ADA/WithdrawADA";
+import HomeADA from "./Wallet/5ADA/HomeADA";
+import DepositADA  from "./Wallet/5ADA/DepositADA";
+import WithdrawADA from "./Wallet/5ADA/WithdrawADA";
 
 
-import HomeBNB from "./6BNB/HomeBNB";
-import DepositBNB from "./6BNB/DepositBNB";
-import WithdrawBNB from "./6BNB/WithdrawBNB";
+import HomeBNB from "./Wallet/6BNB/HomeBNB";
+import DepositBNB from "./Wallet/6BNB/DepositBNB";
+import WithdrawBNB from "./Wallet/6BNB/WithdrawBNB";
 
 
-import HomeDAI  from "./7DAI/HomeDAI";
-import DepositDAI from "./7DAI/DepositDAI";
-import WithdrawDAI from "./7DAI/WithdrawDAI";
+import HomeDAI  from "./Wallet/7DAI/HomeDAI";
+import DepositDAI from "./Wallet/7DAI/DepositDAI";
+import WithdrawDAI from "./Wallet/7DAI/WithdrawDAI";
 
 
-import HomeDASH from "./8DASH/HomeDASH";
-import DepositDASH from "./8DASH/DepositDASH";
-import WithdrawDASH from "./8DASH/WithdrawDASH";
+import HomeDASH from "./Wallet/8DASH/HomeDash";
+import DepositDASH from "./Wallet/8DASH/DepositDASH";
+import WithdrawDASH from "./Wallet/8DASH/WithdrawDASH";
 
 
-import HomeDGB from "./9DGB/HomeDGB";
-import DepositDGB from "./9DGB/DepositDGB";
-import WithdrawDGB from "./9DGB/WithdrawDGB";
+import HomeDGB from "./Wallet/9DGB/HomeDGB";
+import DepositDGB from "./Wallet/9DGB/DepositDGB";
+import WithdrawDGB from "./Wallet/9DGB/WithdrawDGB";
 
 
-import HomeDIVI from "./10DIVI/HomeDIVI";
-import DepositDIVI from "./10DIVI/DepositDIVI";
-import WithdrawDIVI from "./10DIVI/WithdrawDIVI";
+import HomeDIVI from "./Wallet/10DIVI/HomeDIVI";
+import DepositDIVI from "./Wallet/10DIVI/DepositDIVI";
+import WithdrawDIVI from "./Wallet/10DIVI/WithdrawDIVI";
 
 
-import HomeDOGE from "./11DOGE/HomeDOGE";
-import DepositDOGE from "./11DOGE/DepositDOGE";
-import WithdrawDOGE from "./11DOGE/WithdrawDOGE";
+import HomeDOGE from "./Wallet/11DOGE/HomeDOGE";
+import DepositDOGE from "./Wallet/11DOGE/DepositDOGE";
+import WithdrawDOGE from "./Wallet/11DOGE/WithdrawDOGE";
 
 
-import HomeETH from "./12ETH/HomeETH";
-import DepositETH from "./12ETH/DepositETH";
-import WithdrawETH  from "./12ETH/WithdrawETH";
+import HomeETH from "./Wallet/12ETH/HomeETH";
+import DepositETH from "./Wallet/12ETH/DepositETH";
+import WithdrawETH  from "./Wallet/12ETH/WithdrawETH";
 
 
-import HomeETHEREUM from "./13ETHEREUM/HomeETHEREUM";
-import DepositETHEREUM from "./13ETHEREUM/DepositETHEREUM";
-import WithdrawETHEREUM from "./13ETHEREUM/WithdrawETHEREUM";
+import HomeETHEREUM from "./Wallet/13ETHEREUM/HomeETHEREUM";
+import DepositETHEREUM from "./Wallet/13ETHEREUM/DepositETHEREUM";
+import WithdrawETHEREUM from "./Wallet/13ETHEREUM/WithdrawETHEREUM";
 
 
-import HomeSHIB from "./14SHIB/HomeSHIB";
-import DepositSHIB from "./14SHIB/DepositSHIB";
-import WithdrawSHIB from "./14SHIB/WithdrawSHIB";
+import HomeSHIB from "./Wallet/14SHIB/HomeSHIB";
+import DepositSHIB from "./Wallet/14SHIB/DepositSHIB";
+import WithdrawSHIB from "./Wallet/14SHIB/WithdrawSHIB";
 
 
-import HomeSMART from "./15SMART/HomeSMART";
-import DepositSMART from "./15SMART/DepositSMART";
-import WithdrawSMART from "./15SMART/WithdrawSMART";
+import HomeSMART from "./Wallet/15SMART/HomeSMART";
+import DepositSMART from "./Wallet/15SMART/DepositSMART";
+import WithdrawSMART from "./Wallet/15SMART/WithdrawSMART";
 
 
-import HomeSOL from "./16SOL/HomeSOL";
-import DepositSOL from "./16SOL/DepositSOL";
-import WithdrawSOL from "./16SOL/WithdrawSOL";
+import HomeSOL from "./Wallet/16SOL/HomeSOL";
+import DepositSOL from "./Wallet/16SOL/DepositSOL";
+import WithdrawSOL from "./Wallet/16SOL/WithdrawSOL";
 
 
-import HomeTRX  from "./17TRX/HomeTRX";
-import DepositTRX from "./17TRX/DepositTRX";
-import WithdrawTRX from "./17TRX/WithdrawTRX";
+import HomeTRX  from "./Wallet/17TRX/HomeTRX";
+import DepositTRX from "./Wallet/17TRX/DepositTRX";
+import WithdrawTRX from "./Wallet/17TRX/WithdrawTRX";
 
 
-import HomeUSDC from "./18USDC/HomeUSDC";
-import DepositUSDC from "./18USDC/DepositUSDC";
-import WithdrawUSDC from "./18USDC/WithdrawUSDC";
+import HomeUSDC from "./Wallet/18USDC/HomeUSDC";
+import DepositUSDC from "./Wallet/18USDC/DepositUSDC";
+import WithdrawUSDC from "./Wallet/18USDC/WithdrawUSDC";
 
 
-import HomeUSDT from "./19USDT/HomeUSDT";
-import DepositUSDT from "./19USDT/DepositUSDT";
-import WithdrawUSDT from "./19USDT/WithdrawUSDT";
+import HomeUSDT from "./Wallet/19USDT/HomeUSDT";
+import DepositUSDT from "./Wallet/19USDT/DepositUSDT";
+import WithdrawUSDT from "./Wallet/19USDT/WithdrawUSDT";
 
 
-import HomeXMR from "./20XMR/HomeXMR";
-import DepositXMR  from "./20XMR/DepositXMR";
-import WithdrawXMR from "./20XMR/WithdrawXMR";
+import HomeXMR from "./Wallet/20XMR/HomeXMR";
+import DepositXMR  from "./Wallet/20XMR/DepositXMR";
+import WithdrawXMR from "./Wallet/20XMR/WithdrawXMR";
 
 
-import HomeXRP  from "./21XRP/HomeXRP";
-import DepositXRP  from "./21XRP/DepositXRP";
-import  WithdrawXRP from "./21XRP/WithdrawXRP";
+import HomeXRP  from "./Wallet/21XRP/HomeXRP";
+import DepositXRP  from "./Wallet/21XRP/DepositXRP";
+import  WithdrawXRP from "./Wallet/21XRP/WithdrawXRP";
 
 
-import HomeZEC from "./22ZEC/HomeZEC";
-import DepositZEC from "./22ZEC/DepositZEC";
-import WithdrawZEC from "./22ZEC/WithdrawZEC";
+import HomeZEC from "./Wallet/22ZEC/HomeZEC";
+import DepositZEC from "./Wallet/22ZEC/DepositZEC";
+import WithdrawZEC from "./Wallet/22ZEC/WithdrawZEC";
 
 
 const client = new Coinpayments({
