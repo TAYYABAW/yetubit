@@ -20,30 +20,524 @@ import {
 import { CryptoCurrencyMarket } from "react-ts-tradingview-widgets";
 import Coinpayments from "coinpayments";
 
+import { ReactComponent as Arr } from "./Wallet/arrow.svg";
+import { ReactComponent as Door } from "./Wallet/door.svg";
+
+import HomeBTC  from "./1BTC/HomeBTC";
+import  DepositBTC from "./1BTC/DepositBTC";
+import WithdrawBTC from "./1BTC/WithdrawBTC";
+
+
+import HomeBCH from "./2BCH/HomeBCH";
+import DepositBCH  from "./2BCH/DepositBCH";
+import WithdrawBCH from "./2BCH/WithdrawBCH";
+
+
+import HomeLTC from "./3LTC/HomeLTC";
+import DepositLTC from "./3LTC/DepositLTC";
+import WithdrawLTC from "./3LTC/WithdrawLTC";
+
+
+import HomeVLX from "./4VLX/HomeVLX";
+import DepositVLX from "./4VLX/DepositVLX";
+import WithdrawVLX from "./4VLX/WithdrawVLX";
+
+
+import HomeADA from "./5ADA/HomeADA";
+import DepositADA  from "./5ADA/DepositADA";
+import WithdrawADA from "./5ADA/WithdrawADA";
+
+
+import HomeBNB from "./6BNB/HomeBNB";
+import DepositBNB from "./6BNB/DepositBNB";
+import WithdrawBNB from "./6BNB/WithdrawBNB";
+
+
+import HomeDAI  from "./7DAI/HomeDAI";
+import DepositDAI from "./7DAI/DepositDAI";
+import WithdrawDAI from "./7DAI/WithdrawDAI";
+
+
+import HomeDASH from "./8DASH/HomeDASH";
+import DepositDASH from "./8DASH/DepositDASH";
+import WithdrawDASH from "./8DASH/WithdrawDASH";
+
+
+import HomeDGB from "./9DGB/HomeDGB";
+import DepositDGB from "./9DGB/DepositDGB";
+import WithdrawDGB from "./9DGB/WithdrawDGB";
+
+
+import HomeDIVI from "./10DIVI/HomeDIVI";
+import DepositDIVI from "./10DIVI/DepositDIVI";
+import WithdrawDIVI from "./10DIVI/WithdrawDIVI";
+
+
+import HomeDOGE from "./11DOGE/HomeDOGE";
+import DepositDOGE from "./11DOGE/DepositDOGE";
+import WithdrawDOGE from "./11DOGE/WithdrawDOGE";
+
+
+import HomeETH from "./12ETH/HomeETH";
+import DepositETH from "./12ETH/DepositETH";
+import WithdrawETH  from "./12ETH/WithdrawETH";
+
+
+import HomeETHEREUM from "./13ETHEREUM/HomeETHEREUM";
+import DepositETHEREUM from "./13ETHEREUM/DepositETHEREUM";
+import WithdrawETHEREUM from "./13ETHEREUM/WithdrawETHEREUM";
+
+
+import HomeSHIB from "./14SHIB/HomeSHIB";
+import DepositSHIB from "./14SHIB/DepositSHIB";
+import WithdrawSHIB from "./14SHIB/WithdrawSHIB";
+
+
+import HomeSMART from "./15SMART/HomeSMART";
+import DepositSMART from "./15SMART/DepositSMART";
+import WithdrawSMART from "./15SMART/WithdrawSMART";
+
+
+import HomeSOL from "./16SOL/HomeSOL";
+import DepositSOL from "./16SOL/DepositSOL";
+import WithdrawSOL from "./16SOL/WithdrawSOL";
+
+
+import HomeTRX  from "./17TRX/HomeTRX";
+import DepositTRX from "./17TRX/DepositTRX";
+import WithdrawTRX from "./17TRX/WithdrawTRX";
+
+
+import HomeUSDC from "./18USDC/HomeUSDC";
+import DepositUSDC from "./18USDC/DepositUSDC";
+import WithdrawUSDC from "./18USDC/WithdrawUSDC";
+
+
+import HomeUSDT from "./19USDT/HomeUSDT";
+import DepositUSDT from "./19USDT/DepositUSDT";
+import WithdrawUSDT from "./19USDT/WithdrawUSDT";
+
+
+import HomeXMR from "./20XMR/HomeXMR";
+import DepositXMR  from "./20XMR/DepositXMR";
+import WithdrawXMR from "./20XMR/WithdrawXMR";
+
+
+import HomeXRP  from "./21XRP/HomeXRP";
+import DepositXRP  from "./21XRP/DepositXRP";
+import  WithdrawXRP from "./21XRP/WithdrawXRP";
+
+
+import HomeZEC from "./22ZEC/HomeZEC";
+import DepositZEC from "./22ZEC/DepositZEC";
+import WithdrawZEC from "./22ZEC/WithdrawZEC";
+
+
 const client = new Coinpayments({
   key: "eb9c4c42626c58f13ca6e70b4812c46f36e269f7c1ef5f0b184c2c936dff8a15",
   secret: "BfF48F19A4513ec6fF76cd4854CC4947ab29485c32ef2339C7A0400cEf86E355",
 });
 
 const MyWallet = () => {
-  const [gridInsideModal, setGridInsideModal] = useState(false);
-  const tabData = [
+  const [BTC_modal, setBTC_modal] = useState("");
+  const [BCH_modal, setBCH_modal] = useState("");
+  const [LTC_modal, setLTC_modal] = useState("");
+  const [VLX_modal, setVLX_modal] = useState("");
+  const [ADA_modal, setADA_modal] = useState("");
+  const [BNB_modal, setBNB_modal] = useState("");
+  const [DAI_modal, setDAI_modal] = useState("");
+  const [DASH_modal, setDASH_modal] = useState("");
+  const [DGB_modal, setDGB_modal] = useState("");
+  const [DIVI_modal, setDIVI_modal] = useState("");
+  const [DOGE_modal, setDOGE_modal] = useState("");
+  const [ETH_modal, setETH_modal] = useState("");
+  const [Ethereum_modal, setEthereum_modal] = useState("");
+  const [SHIB_modal, setSHIB_modal] = useState("");
+  const [SMART_modal, setSMART_modal] = useState("");
+  const [SOL_modal, setSOL_modal] = useState("");
+  const [TRX_modal, setTRX_modal] = useState("");
+  const [USDC_modal, setUSDC_modal] = useState("");
+  const [USDT_modal, setUSDT_modal] = useState("");
+  const [XMR_modal, setXMR_modal] = useState("");
+  const [XRP_modal, setXRP_modal] = useState("");
+  const [ZEC_modal, setZEC_modal] = useState("");
+
+  const tabData1 = [
     {
       name: "Home",
-      content: "<Profile />",
+      content: <HomeBTC />,
     },
     {
       name: "Withdraw",
-      content: "<Referrals />",
+      content: <WithdrawBTC />,
     },
     {
       name: "Deposit",
-      content:" <Password />",
+      content: <DepositBTC />,
     },
     {
       name: "extra",
     },
   ];
+
+  const tabData2 = [
+    {
+      name: "Home",
+      content: <HomeBCH />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawBCH />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositBCH />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData3 = [
+    {
+      name: "Home",
+      content: <HomeLTC />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawLTC />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositLTC />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData4 = [
+    {
+      name: "Home",
+      content: <HomeVLX />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawVLX />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositVLX />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData5 = [
+    {
+      name: "Home",
+      content: <HomeADA />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawADA />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositADA />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData6 = [
+    {
+      name: "Home",
+      content: <HomeBNB />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawBNB />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositBNB />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData7 = [
+    {
+      name: "Home",
+      content: <HomeDAI />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawDAI />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositDAI />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData8 = [
+    {
+      name: "Home",
+      content: <HomeDASH />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawDASH />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositDASH />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData9 = [
+    {
+      name: "Home",
+      content: <HomeDGB />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawDGB />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositDGB />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData10 = [
+    {
+      name: "Home",
+      content: <HomeDIVI />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawDIVI />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositDIVI />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData11 = [
+    {
+      name: "Home",
+      content: <HomeDOGE />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawDOGE />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositDOGE />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData12 = [
+    {
+      name: "Home",
+      content: <HomeETH />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawETH />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositETH />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData13 = [
+    {
+      name: "Home",
+      content: <HomeETHEREUM />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawETHEREUM />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositETHEREUM />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData14 = [
+    {
+      name: "Home",
+      content: <HomeSHIB />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawSHIB />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositSHIB />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData15 = [
+    {
+      name: "Home",
+      content: <HomeSMART />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawSMART />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositSMART />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData16 = [
+    {
+      name: "Home",
+      content: <HomeSOL />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawSOL />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositSOL />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData17 = [
+    {
+      name: "Home",
+      content: <HomeTRX />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawTRX />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositTRX />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData18 = [
+    {
+      name: "Home",
+      content: <HomeUSDC />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawUSDC />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositUSDC />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData19 = [
+    {
+      name: "Home",
+      content: <HomeUSDT />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawUSDT />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositUSDT />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData20 = [
+    {
+      name: "Home",
+      content: <HomeXMR />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawXMR />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositXMR />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData21 = [
+    {
+      name: "Home",
+      content: <HomeXRP />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawXRP />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositXRP />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+  const tabData22 = [
+    {
+      name: "Home",
+      content: <HomeZEC />,
+    },
+    {
+      name: "Withdraw",
+      content: <WithdrawZEC />,
+    },
+    {
+      name: "Deposit",
+      content: <DepositZEC />,
+    },
+    {
+      name: "extra",
+    },
+  ];
+
   // BALANCE
   const [BTC_balance, setBTC_balance] = useState("");
   const [BCH_balance, setBCH_balance] = useState("");
@@ -346,10 +840,7 @@ const MyWallet = () => {
         </div>
       </div>
 
-      <div
-        className="p-3 m-3 rounded"
-        style={{ boxShadow: "0 0 30px rgba(0, 0, 0, .15)" }}
-      >
+      <div className="p-3 m-3 rounded">
         <h3>Assets Balance</h3>
         <Col lg={12}>
           <Card>
@@ -369,7 +860,10 @@ const MyWallet = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="sorting_1" onClick={() => setGridInsideModal(true)}>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setBTC_modal(true)}
+                    >
                       <div className="form-check custom-checkbox ">
                         <input
                           type="button"
@@ -390,82 +884,2690 @@ const MyWallet = () => {
                       <strong>BTC</strong>
                     </td>
                     <td style={{ color: "red" }}>2.05</td>
-                    <td className="color-primary"> <h4>{BTC_balance}</h4>
-                    ${BTC_USD}
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{BTC_balance}</h4>${BTC_USD}
                     </td>
-                 
-              {/* <!-- Modal --> */}
-              <Modal className="fade d-flex" show={gridInsideModal} size="lg">
-                <Modal.Header>
-                  <Modal.Title>Account Setting</Modal.Title>
-                  <Button
-                    variant=""
-                    className="btn-close"
-                    onClick={() => setGridInsideModal(false)}
-                  ></Button>
-                </Modal.Header>
-                <Modal.Body>
-                  <Container className="">
-                    <Col lg="12">
-                      <Tab.Container
-                        defaultActiveKey={tabData[0].name.toLowerCase()}
-                      >
-                        <Tab.Content className="">
-                          {tabData.map(
-                            (data, i) =>
-                              i !== tabData.length - 1 && (
-                                <Tab.Pane
-                                  eventKey={data.name.toLowerCase()}
-                                  key={i}
-                                >
-                                  <p>{data.content}</p>
-                                </Tab.Pane>
-                              )
-                          )}
-                        </Tab.Content>
-                        <Nav as="ul">
-                          {tabData.map(
-                            (data, i) =>
-                              i !== tabData.length - 1 && (
-                                <Nav.Item as="li" key={i}>
-                                  <Nav.Link eventKey={data.name.toLowerCase()}>
-                                    {i === 0
-                                      ?   <button
-                                      className="btn "
-                                      type="submit"
-                                    >
-                                      <strong>Home</strong>
-                                    </button>
-                                      : i === 1
-                                      ? <button
-                                      className="btn "
-                                      type="submit"
-                                      style={{ backgroundColor: "#FFD600", color: "white", borderRadius: "10px" }}
-                                    >
-                                      <strong>Withdraw</strong>
-                                    </button>
-                                      : i === 2
-                                      ? <button
-                                      className="btn "
-                                      type="submit"
-                                      style={{ backgroundColor: "#FFD600", color: "white", borderRadius: "10px" }}
-                                    >
-                                      <strong>Deposit</strong>
-                                    </button>
-                                      : i === 3                              
-                                      ? "a"
-                                      : "b"}
-                                  </Nav.Link>
-                                </Nav.Item>
-                              )
-                          )}
-                        </Nav>
-                        
-                      </Tab.Container>
-                    </Col>
-                  </Container>
-                </Modal.Body>
-              </Modal>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={BTC_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={BTC_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">BTC Balance</h6>
+                            <small className="">Bitcoin</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setBTC_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData1[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData1.map(
+                                  (data, i) =>
+                                    i !== tabData1.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData1.map(
+                                  (data, i) =>
+                                    i !== tabData1.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setBCH_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={BCH_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>BCH</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{BCH_balance}</h4>${BCH_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={BCH_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={BCH_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">BCH Balance</h6>
+                            <small className="">Bitcoin Cash</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setBCH_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData2[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData2.map(
+                                  (data, i) =>
+                                    i !== tabData2.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData2.map(
+                                  (data, i) =>
+                                    i !== tabData2.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setLTC_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={LTC_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>LTC</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{LTC_balance}</h4>${LTC_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={LTC_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={LTC_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">LTC Balance</h6>
+                            <small className="">Litecoin</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setLTC_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData3[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData3.map(
+                                  (data, i) =>
+                                    i !== tabData3.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData3.map(
+                                  (data, i) =>
+                                    i !== tabData3.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setVLX_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={VLX_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>VLX</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{VLX_balance}</h4>${VLX_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={VLX_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={VLX_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">VLX Balance</h6>
+                            <small className="">Velas (EVM)</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setVLX_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData4[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData4.map(
+                                  (data, i) =>
+                                    i !== tabData4.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData4.map(
+                                  (data, i) =>
+                                    i !== tabData4.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setADA_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={ADA_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>ADA</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{ADA_balance}</h4>${ADA_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={ADA_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={ADA_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">ADA.BEP2 Balance</h6>
+                            <small className="">Cardano</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setADA_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData5[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData5.map(
+                                  (data, i) =>
+                                    i !== tabData5.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData5.map(
+                                  (data, i) =>
+                                    i !== tabData5.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setBNB_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={BNB_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>BNB</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{BNB_balance}</h4>${BNB_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={BNB_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={BNB_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">BNB Balance</h6>
+                            <small className="">BNB Coin</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setBNB_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData6[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData6.map(
+                                  (data, i) =>
+                                    i !== tabData6.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData6.map(
+                                  (data, i) =>
+                                    i !== tabData6.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setDAI_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={DAI_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>DAI</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{DAI_balance}</h4>${DAI_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={DAI_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={DAI_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">DAI Balance</h6>
+                            <small className="">Dai (ERC20)</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setDAI_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData7[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData7.map(
+                                  (data, i) =>
+                                    i !== tabData7.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData7.map(
+                                  (data, i) =>
+                                    i !== tabData7.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setDASH_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={DASH_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>DASH</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{DASH_balance}</h4>${DASH_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={DASH_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={BTC_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">DASH Balance</h6>
+                            <small className="">DASH</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setDASH_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData8[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData8.map(
+                                  (data, i) =>
+                                    i !== tabData8.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData8.map(
+                                  (data, i) =>
+                                    i !== tabData8.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setDGB_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={DGB_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>DGB</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{DGB_balance}</h4>${DGB_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={DGB_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={DGB_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">DGB Balance</h6>
+                            <small className="">DigiByte</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setDGB_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData9[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData9.map(
+                                  (data, i) =>
+                                    i !== tabData9.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData9.map(
+                                  (data, i) =>
+                                    i !== tabData9.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setDIVI_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={DIVI_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>DIVI</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{DIVI_balance}</h4>${DIVI_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={DIVI_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={DIVI_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">DIVI Balance</h6>
+                            <small className="">DIVI</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setDIVI_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData10[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData10.map(
+                                  (data, i) =>
+                                    i !== tabData10.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData10.map(
+                                  (data, i) =>
+                                    i !== tabData10.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setDOGE_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={DOGE_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>DOGE</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{DOGE_balance}</h4>${DOGE_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={DOGE_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={DOGE_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">DOGE Balance</h6>
+                            <small className="">DOGE</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setDOGE_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData11[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData11.map(
+                                  (data, i) =>
+                                    i !== tabData11.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData11.map(
+                                  (data, i) =>
+                                    i !== tabData11.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setETH_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={ETH_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>ETH</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{ETH_balance}</h4>${ETH_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={ETH_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={ETH_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">ETH Balance</h6>
+                            <small className="">Ether</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setETH_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData12[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData12.map(
+                                  (data, i) =>
+                                    i !== tabData12.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData12.map(
+                                  (data, i) =>
+                                    i !== tabData12.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setEthereum_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={Ethereum_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>ETH.BEP2</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{Ethereum_balance}</h4>${Ethereum_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal
+                      className="fade d-flex"
+                      show={Ethereum_modal}
+                      size="lg"
+                    >
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={Ethereum_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">ETH.BEP2 Balance</h6>
+                            <small className="">Ethereum (BC Chain)</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setEthereum_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData13[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData13.map(
+                                  (data, i) =>
+                                    i !== tabData13.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData13.map(
+                                  (data, i) =>
+                                    i !== tabData13.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setSHIB_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={SHIB_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>SHIB</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{SHIB_balance}</h4>${SHIB_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={SHIB_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={SHIB_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">SHIB Balance</h6>
+                            <small className="">SHIBA INU</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setSHIB_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData14[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData14.map(
+                                  (data, i) =>
+                                    i !== tabData14.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData14.map(
+                                  (data, i) =>
+                                    i !== tabData14.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setSMART_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={SMART_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>SMART</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{SMART_balance}</h4>${SMART_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={SMART_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={SMART_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">SMART Balance</h6>
+                            <small className="">SMART CASH</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setSMART_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData15[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData15.map(
+                                  (data, i) =>
+                                    i !== tabData15.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData15.map(
+                                  (data, i) =>
+                                    i !== tabData15.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setSOL_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={SOL_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>SOL</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{SOL_balance}</h4>${SOL_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={SOL_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={SOL_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">SOL Balance</h6>
+                            <small className="">Solana</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setSOL_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData16[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData16.map(
+                                  (data, i) =>
+                                    i !== tabData16.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData16.map(
+                                  (data, i) =>
+                                    i !== tabData16.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setTRX_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={TRX_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>TRX</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{TRX_balance}</h4>${TRX_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={TRX_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={TRX_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">BTC Balance</h6>
+                            <small className="">TRON</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setTRX_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData17[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData17.map(
+                                  (data, i) =>
+                                    i !== tabData17.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData17.map(
+                                  (data, i) =>
+                                    i !== tabData17.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setUSDC_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={USDC_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>USDC</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{USDC_balance}</h4>${USDC_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={USDC_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={USDC_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">BTC Balance</h6>
+                            <small className="">USD Coin (ERC20)</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setUSDC_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData18[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData18.map(
+                                  (data, i) =>
+                                    i !== tabData18.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData18.map(
+                                  (data, i) =>
+                                    i !== tabData18.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setUSDT_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={USDT_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>USDT</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{USDT_balance}</h4>${USDT_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={USDT_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={USDT_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">BTC Balance</h6>
+                            <small className="">Tether USD (BC Chain)</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setUSDT_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData19[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData19.map(
+                                  (data, i) =>
+                                    i !== tabData19.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData19.map(
+                                  (data, i) =>
+                                    i !== tabData19.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setXMR_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={XMR_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>XMR</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{XMR_balance}</h4>${XMR_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={XMR_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={XMR_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">BTC Balance</h6>
+                            <small className="">Monero</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setXMR_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData20[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData20.map(
+                                  (data, i) =>
+                                    i !== tabData20.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData20.map(
+                                  (data, i) =>
+                                    i !== tabData20.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setXRP_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={XRP_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>XR</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{XRP_balance}</h4>${XRP_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={XRP_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={XRP_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">XRP Balance</h6>
+                            <small className="">XRP Token (BC Chain)</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setXRP_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData21[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData21.map(
+                                  (data, i) =>
+                                    i !== tabData21.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData21.map(
+                                  (data, i) =>
+                                    i !== tabData21.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
+                  </tr>{" "}
+                  <tr>
+                    <td
+                      className="sorting_1"
+                      onClick={() => setZEC_modal(true)}
+                    >
+                      <div className="form-check custom-checkbox ">
+                        <input
+                          type="button"
+                          className="form-check-input"
+                          required
+                        />
+                        <label
+                          className="form-check-label"
+                          htmlFor="customCheckBox3"
+                        />
+                      </div>
+                    </td>
+                    <td>
+                      {" "}
+                      <img src={ZEC_img} alt="" width={45} />{" "}
+                    </td>
+                    <td>
+                      <strong>ZEC</strong>
+                    </td>
+                    <td style={{ color: "red" }}>2.05</td>
+                    <td className="color-primary">
+                      {" "}
+                      <h4>{ZEC_balance}</h4>${ZEC_USD}
+                    </td>
+
+                    {/* <!-- Modal --> */}
+                    <Modal className="fade d-flex" show={ZEC_modal} size="lg">
+                      <Modal.Header>
+                        <div className="row">
+                          <div className="col-3 me-3">
+                            <img src={ZEC_img} alt="" width={45} />{" "}
+                          </div>
+                          <div className="col">
+                            <h6 className="mb-1">BTC Balance</h6>
+                            <small className="">ZCash</small>
+                          </div>
+                        </div>
+
+                        <Button
+                          variant=""
+                          className="btn-close"
+                          onClick={() => setZEC_modal(false)}
+                        ></Button>
+                      </Modal.Header>
+                      <Modal.Body>
+                        <Container className="">
+                          <Col lg="12">
+                            <Tab.Container
+                              defaultActiveKey={tabData22[0].name.toLowerCase()}
+                            >
+                              <Tab.Content className="">
+                                {tabData22.map(
+                                  (data, i) =>
+                                    i !== tabData22.length - 1 && (
+                                      <Tab.Pane
+                                        eventKey={data.name.toLowerCase()}
+                                        key={i}
+                                      >
+                                        <p>{data.content}</p>
+                                      </Tab.Pane>
+                                    )
+                                )}
+                              </Tab.Content>
+                              <Nav as="ul" style={{ justifyContent: "center" }}>
+                                {tabData22.map(
+                                  (data, i) =>
+                                    i !== tabData22.length - 1 && (
+                                      <Nav.Item as="li" key={i}>
+                                        <Nav.Link
+                                          eventKey={data.name.toLowerCase()}
+                                        >
+                                          {i === 0 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                            >
+                                              <strong>Home</strong>
+                                            </button>
+                                          ) : i === 1 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                backgroundColor: "#FFD600",
+                                                color: "white",
+                                                borderRadius: "10px",
+                                              }}
+                                            >
+                                              <Arr /> <strong> Withdraw</strong>
+                                            </button>
+                                          ) : i === 2 ? (
+                                            <button
+                                              className="btn "
+                                              type="submit"
+                                              style={{
+                                                color: "black",
+                                                borderRadius: "10px",
+                                                border: "1px solid lightgray",
+                                              }}
+                                            >
+                                              <Door /> <strong>Deposit</strong>
+                                            </button>
+                                          ) : i === 3 ? (
+                                            "a"
+                                          ) : (
+                                            "b"
+                                          )}
+                                        </Nav.Link>
+                                      </Nav.Item>
+                                    )
+                                )}
+                              </Nav>
+                            </Tab.Container>
+                          </Col>
+                        </Container>
+                      </Modal.Body>
+                    </Modal>
                   </tr>
                 </tbody>
               </Table>
